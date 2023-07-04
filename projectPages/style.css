@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    cursor: crosshair;
+}
+
+:root{
+    --primary: #82ff04;
+    --text: #ffffff;
+    --backGround: #1c1b1f;
+}
+
+body{
+    font-family: 'Wix Madefor Display', sans-serif;
+    background-color: var(--backGround);
+    color: var(--text);
+}
+
+/*  */
+
+h2{
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+h3{
+    font-size: 4.3rem;
+    color: var(--primary);
+    line-height: 4.3rem;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.25rem; cursor: pointer;
+}
+
+/*  */
+
+#container{
+    padding: 0 2vw 0 2vw;
+}
+
+/*  */
+
+.header{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 15vh;
+    margin-top: 2vw;
+    gap: 2vw;
+}
+
+/*  */
+
+.works{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 10vh;
+    gap: 2vw;
+}
+
+.works .yogurt,
+.works .burton,
+.works .fitbit,
+.works .sketch{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+}
+
+.works .burton{
+    background-image: url("../images/bootstrapsite/burton.jpg");
+}
+.works .burton:hover {
+    box-shadow: 0px 5px 0px 0px rgb(255, 119, 0);
+    height: 72vh;
+}
+
+.works .yogurt{
+    background-image: url("../images/bootstrapsite/yogurt.jpg");
+    background-size: contain;
+    background-color: #1e1e1e;
+    cursor: pointer;
+}
+.works .yogurt:hover{
+    box-shadow: 0px 5px 0px 0px greenyellow;
+    height: 72vh;
+}
+
+.works .fitbit{
+    background-image: url("../images/bootstrapsite/fitbitvector.jpg");
+}
+.works .fitbit:hover{
+    box-shadow: 0px 5px 0px 0px rgb(0, 238, 255);
+    height: 72vh;}
+
+.works .sketch{
+    background-image: url("../images/bootstrapsite/SKETCHES.jpg");
+}
+
+.works .sketch:hover{
+    box-shadow: 0px 5px 0px 0px rgb(255, 255, 255);
+    height: 72vh;
+ }
+
+/*  */
+
+.menu a:hover{
+    color: var(--primary);
+}
+
+/*  */
+
+.hamburger{
+    display: none;
+}
+
+.hamburgerMenu{
+    display: none;
+    position: fixed;
+    width: 76vw;
+    height: 100vh;
+    top: 0;
+    right: -100vw;
+    background-color: var(--primary);
+    z-index: 1;
+}
+
+.hamburgerMenu a{
+    color: var(--backGround);
+}
+
+.hamburgerMenu ul li a{
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+.hamburgerMenu ul{
+    margin-left: 10vw;
+    margin-top: 25vh;
+}
+
+/*  */
+
+footer{
+    width: 100%;
+    height: 35vh;
+    margin-top: 10vh;
+    padding: 2vw;
+    background-color: var(--primary);
+}
+
+footer, footer a, footer h2 {
+    color: var(--backGround);
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 72%;
+    margin-top: 2vw;
+}
+
+.watermark{
+    text-align: center;
+}
+
+/*  */
+
+.overlay-top,
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backGround);
+    z-index: 101;
+    animation: moveOut 750ms ease;
+    animation-fill-mode: forwards;
+}
+
+.overlay{
+    z-index: 100;
+    background-color: var(--primary);
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveOut{
+    0%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+/*  */
+
+.hidden{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1000ms ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*  */
+
+@media screen and (max-width: 1350px) {
+
+    .menu{
+        display: none;
+    }
+
+    .hamburgerMenu{
+        display: block;
+        z-index: 90;
+    }
+
+    .hamburger{
+        display: block;
+        position: fixed;
+        width: 40px;
+        aspect-ratio: 1;
+        background-image: url("../images/menuPlus.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 50;
+    }
+
+    .hamburgerCross{
+        aspect-ratio: 1;
+        position: absolute;
+        width: 40px;
+        background-image: url("../images/menuCros.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 90;
+    }
+
+    .works{
+        display: block;
+    }
+
+    .works div{
+        margin-bottom: 3vh;
+    }
+
+    footer{
+        display: block;
+        height: 50vh;
+    }
+
+    .footerWrapper{
+        flex-direction: column;
+        margin-bottom: 2vh;
+    }
+
+    footer, footer a{
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    footer h2{
+        font-size: 1.6rem;
+    }
+
+    .watermark{
+        font-size: 0.7rem;
+        margin-top: 4vh;
+    }
+}

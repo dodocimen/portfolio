@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-margin-top: 10vh;
+}
+
+:root{
+    --primary: #82ff04;
+    --text: #ffffff;
+    --backGround: #1c1b1f;
+}
+
+body{
+    font-family: 'Wix Madefor Display', sans-serif;
+    background-color: var(--backGround);
+    color: var(--text);
+}
+
+/*  */
+
+.hidden{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1000ms ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*  */
+
+.overlay-top,
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backGround);
+    z-index: 101;
+    animation: moveOut 750ms ease;
+    animation-fill-mode: forwards;
+}
+
+.overlay{
+    z-index: 100;
+    background-color: var(--primary);
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveOut{
+    0%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+/*  */
+
+h2{
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+p{
+    font-size: 2rem;
+    hyphens: auto;
+}
+
+p a{
+    font-size: 2rem;
+    hyphens: auto;
+    color: var(--primary);
+}
+
+
+.tab{
+    margin-left: 5vw;
+}
+
+.madeby{
+    color: #82ff04;
+}
+
+/*  */
+
+#container{
+    padding: 0 2vw 0 2vw;
+}
+
+/*  */
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.75fr;
+    height: 90vh;
+    margin-top: 2vw;
+}
+
+.header .menu a:hover{
+    color: var(--primary);
+}
+
+.mainTitle{
+    display: flex;
+    justify-content: right;
+}
+
+.mainTitle .logo{
+    font-size: 10rem;
+    margin-top: -63px;
+    color: var(--primary);
+}
+
+.mainTitle .definition{
+    font-size: 4.2rem;
+    line-height: 4rem;
+}
+
+.mainTitle .definition a{
+    font-size: 2rem;
+}
+
+.mainTitle .definition a .explore{
+    position: relative;
+    margin-top: 40vh;
+    width: calc(100% - .3vw);
+    border-bottom: 1px solid var(--text);
+    margin-left: .3vw;
+}
+
+/*  */
+
+.hamburger{
+    display: none;
+}
+
+.hamburgerMenu{
+    display: none;
+    position: fixed;
+    width: 76vw;
+    height: 100vh;
+    top: 0;
+    right: -100vw;
+    background-color: var(--primary);
+    z-index: 1;
+}
+
+.hamburgerMenu a{
+    color: var(--backGround);
+}
+
+.hamburgerMenu ul li a{
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+.hamburgerMenu ul{
+    margin-left: 10vw;
+    margin-top: 25vh;
+}
+
+/*  */
+
+.intro{
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    margin: 10vh 0 10vh 0;
+}
+
+/*  */
+
+.mission{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 10vh;
+}
+
+.missionChild{
+    display: grid;
+    grid-template-columns: .4fr 2fr 2.4fr;
+    border-bottom: 1px solid var(--text);
+    padding: 8vh 0 8vh 0;
+}
+
+.missionTopic{
+    font-size: 4.3rem;
+    color: var(--primary);
+}
+
+.missionContent{
+    font-size: 1.4rem;
+}
+
+/*  */
+
+.works{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 70vh;
+    margin-top: 10vh;
+    font-size: 6.2rem;
+    line-height: 8rem;
+    color: var(--primary);
+}
+
+.worksImage{
+    width: 100%;
+    height: 100%;
+
+    background-image: url("images/worksHome.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*  */
+
+footer{
+    width: 100%;
+    height: 35vh;
+    margin-top: 10vh;
+    padding: 2vw;
+    background-color: var(--primary);
+}
+
+footer, footer a, footer h2 {
+    color: var(--backGround);
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 72%;
+    margin-top: 2vw;
+}
+
+.watermark{
+    text-align: center;
+}
+
+/*  */
+
+@media screen and (min-width: 1615px) {
+
+    .mainTitle .logo{
+        font-size: 13rem;
+        margin-top: -87px;
+    }
+    
+    .mainTitle .definition{
+        font-size:  8rem;
+        line-height: 8rem;
+        margin-top: -12px;
+    }
+
+    .missionContent{
+        font-size: 2rem;
+    }
+
+    .works{
+        font-size: 8rem;
+        line-height: 10rem;
+    }
+
+}
+
+@media screen and (max-width: 1350px) {
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .hamburgerMenu{
+        display: block;
+        z-index: 90;
+    }
+
+    .hamburger{
+        display: block;
+        position: fixed;
+        width: 40px;
+        aspect-ratio: 1;
+        background-image: url("images/menuPlus.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 50;
+    }
+
+    .hamburgerCross{
+        aspect-ratio: 1;
+        position: absolute;
+        width: 40px;
+        background-image: url("images/menuCros.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 90;
+    }
+
+    .header,
+    .mainTitle{
+        display: block;
+    }
+
+    .mainTitle{
+        margin-top: 8vh;
+    }
+
+    .mainTitle .logo{
+        font-size: 13rem;
+        text-align: center;
+        margin-top: 5vh;
+    }
+    .mainTitle .definition .definitionChild{
+        display: none;
+    }
+
+    .mainTitle .definition a .explore{
+        margin-top: 3vh;
+        text-align: left;
+        padding-bottom: 5px;
+    }
+
+    .intro{
+        display: block;
+    }
+
+    .tab{
+        margin-left: 10vw;
+    }
+
+    .mission{
+        display: block;
+    }
+
+    .mission .number{
+        display: none;
+    }
+
+    .missionChild{
+        display: block;
+    }
+
+    .missionChild .missionTopic{
+        font-size: 2.5rem;
+        margin-bottom: 5vh;
+    }
+
+    .missionChild .missionContent{
+        font-size: 1.5rem;
+    }
+
+    .works{
+        display: block;
+        font-size: 5rem;
+        line-height: 6.5rem;        
+        margin-bottom: 10vh;
+    }
+
+    .worksImage{
+        width: 100%;
+        height: 250px;
+        margin-top: 10vh;
+    }
+
+    footer{
+        display: block;
+        height: 50vh;
+    }
+
+    .footerWrapper{
+        flex-direction: column;
+        margin-bottom: 2vh;
+    }
+
+    footer, footer a{
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    footer h2{
+        font-size: 1.6rem;
+    }
+
+    .watermark{
+        font-size: 0.7rem;
+        margin-top: 4vh;
+    }
+}

@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    cursor: crosshair;
+}
+
+:root{
+    --primary: #82ff04;
+    --text: #ffffff;
+    --backGround: #1c1b1f;
+}
+
+body{
+    font-family: 'Wix Madefor Display', sans-serif;
+    background-color: var(--backGround);
+    color: var(--text);
+}
+
+/*  */
+
+h2{
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+h3{
+    font-size: 4.3rem;
+    color: var(--primary);
+    line-height: 4.3rem;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+p{
+    font-size: 1.65rem;
+    hyphens: auto;
+}
+
+p a{
+    font-size: 1.65rem;
+    hyphens: auto;
+    text-decoration: underline;
+}
+
+/*  */
+
+#container{
+    padding: 0 2vw 0 2vw;
+}
+
+/*  */
+
+.header{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 15vh;
+    margin-top: 2vw;
+    gap: 2vw;
+}
+
+.header .menu a:hover{
+    color: var(--primary);
+}
+
+/*  */
+
+.hamburger{
+    display: none;
+}
+
+.hamburgerMenu{
+    display: none;
+    position: fixed;
+    width: 76vw;
+    height: 100vh;
+    top: 0;
+    right: -100vw;
+    background-color: var(--primary);
+    z-index: 1;
+}
+
+.hamburgerMenu a{
+    color: var(--backGround);
+}
+
+.hamburgerMenu ul li a{
+    font-size: 2rem;
+    line-height: 5rem;
+}
+
+.hamburgerMenu ul{
+    margin-left: 10vw;
+    margin-top: 25vh;
+}
+
+/*  */
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+}
+
+.content div{
+    margin-bottom: 5vh;
+}
+
+.content div ul{
+    font-size: 1.65rem;
+    hyphens: auto;
+}
+
+.content div li:hover{
+    color: var(--primary);
+}
+
+/*  */
+
+footer{
+    width: 100%;
+    height: 35vh;
+    margin-top: 10vh;
+    padding: 2vw;
+    background-color: var(--primary);
+}
+
+footer, footer a, footer h2 {
+    color: var(--backGround);
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 72%;
+    margin-top: 2vw;
+}
+
+.watermark{
+    text-align: center;
+}
+
+/*  */
+
+.overlay-top,
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backGround);
+    z-index: 101;
+    animation: moveOut 750ms ease;
+    animation-fill-mode: forwards;
+}
+
+.overlay{
+    z-index: 100;
+    background-color: var(--primary);
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveOut{
+    0%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+/*  */
+
+form{
+    background-color: var(--backGround);
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+form input,
+form textarea{
+    background-color: var(--backGround);
+    border: 0;
+    border-bottom: 1px solid var(--text);
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    outline: none;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 1rem;
+}
+
+form button{
+    padding: 15px;
+    background-color: var(--primary);
+    color: white;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    width: 150px;
+    margin-top: 2vw;
+}
+
+form h3{
+    margin-bottom: 30px;
+}
+
+/*  */
+
+.contactContent a{
+    font-size: 1.65rem;
+    hyphens: auto;
+}
+
+.contactHeader,
+.contactContent ul{
+    margin-bottom: 55px;
+}
+   
+/*  */
+
+.hidden{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1000ms ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*  */
+
+@media screen and (max-width: 1350px) {
+
+    p,
+    ul li{
+        font-size: 1.5rem;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .hamburgerMenu{
+        display: block;
+        z-index: 90;
+    }
+
+    .hamburger{
+        display: block;
+        position: fixed;
+        width: 40px;
+        aspect-ratio: 1;
+        background-image: url("../images/menuPlus.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 50;
+    }
+
+    .hamburgerCross{
+        aspect-ratio: 1;
+        position: absolute;
+        width: 40px;
+        background-image: url("../images/menuCros.svg");
+        background-size: cover;
+        right: 2vw;
+        top: 2vw;
+        z-index: 90;
+    }
+
+    .content{
+        display: block;
+    }
+
+    .content h3{
+        margin-bottom: -1vh;
+    }
+
+    .content .failedResp{
+        margin-bottom: 55px;
+    }
+
+    .content p{
+        margin-bottom: 10vh;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    footer{
+        display: block;
+        height: 50vh;
+    }
+
+    .footerWrapper{
+        flex-direction: column;
+        margin-bottom: 2vh;
+    }
+
+    footer, footer a{
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    footer h2{
+        font-size: 1.6rem;
+    }
+
+    .watermark{
+        font-size: 0.7rem;
+        margin-top: 4vh;
+    }
+}
